@@ -6,12 +6,16 @@
     <title>My Trips</title>
 </head>
 <body>
-    <h1>My Trips</h1>
     <form method="POST" action="/logout">
         <button>Log out</button>
       </form>
-      
-    <a href="/trips/add-trip">Add a Trip</a>
+    <h1>My Trips</h1>
+    <div>
+      <a href="/chat">Join the Chat!</a>
+    </div>
+    <div>
+      <a href="/trips/add-trip">Add a Trip</a>
+    </div>
     <ul>
     {{#trips}}
         <li>{{title}}

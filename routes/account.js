@@ -24,8 +24,7 @@ authRouter.post('/login', (req, res) => {
         if (req.session) {
             req.session.user = activeUser
         }
-        console.log(req.session.user)
-        console.log(activeUser)
+        
         res.redirect('/trips')
 
     } else {
