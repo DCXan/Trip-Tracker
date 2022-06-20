@@ -18,8 +18,8 @@
             <div>
                 From {{departDate}} To {{returnDate}}
             </div>
-            <form method = 'POST' action = '/delete-trip'>
-                <input type="hidden" value = {{id}} name="tripID">
+            <form method = 'POST' action = '/trips/delete-trip'>
+                <input type="hidden" value = {{tripID}} name="tripID"/>
                 <button>Delete Trip</button>
             </form>
 

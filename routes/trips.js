@@ -31,3 +31,10 @@ router.post('/add-trip', (req, res) => {
 router.get('/add-trip', (req,res) => {
     res.render('add-trip')
 })
+
+router.post('/delete-trip', (req, res) => {
+    const tripID = req.body.tripID
+    trips = trips.filter(trip => trip.tripID != tripID)
+
+    res.redirect('/trips')
+})
