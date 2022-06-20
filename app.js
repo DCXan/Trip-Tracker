@@ -1,12 +1,23 @@
 const express = require('express')
 const mustacheExpress = require('mustache-express')
+const session = require('express-session')
+const authenticationMW = require('./middleware/authentication')
 
 const app = express()
 
 app.use(express.urlencoded({extended: true}))
 
+app.use(session({
+    secret: 'secretkey',
+    saveUninitialized: true,
+    resave: true
+}))
+
 const tripsRouter = require('./routes/trips')
-app.use('/trips', tripsRouter)
+app.use('/trips', authenticationMW, tripsRouter)
+
+const authRouter = require('./routes/account')
+app.use('/', authRouter)
 
 app.engine('mustache', mustacheExpress())
 app.set('views', './views')
