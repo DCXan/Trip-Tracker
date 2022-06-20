@@ -41,8 +41,9 @@ app.get('/chat', authenticationMW, (req, res) => {
     res.sendFile(__dirname + '/chat.html')
 })
 
+
 let port = 3000
-app.listen(port, () => {
+http.listen(port, () => {
     console.log(`Server is running on port ${port}.`)
 })
 
